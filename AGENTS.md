@@ -1,7 +1,7 @@
 # River Company
 
 The user has authorized publishing the source code to GitHub in `dimiszz/river-company`.
-The playable game remains LOCAL ONLY. Do not deploy it, enable GitHub Pages, or publish a hosted version unless the user explicitly requests website hosting.
+The user has explicitly authorized making `dimiszz/river-company` public and hosting the playable game on GitHub Pages. Do not publish to other hosting providers without a separate request.
 Start the local preview with `npm run dev`.
 An earlier private Sites deployment exists; it does not authorize additional hosting or deployment. Local hosting metadata under `.openai/` is not part of the maintained source.
 

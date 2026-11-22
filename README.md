@@ -1,6 +1,6 @@
 # River Company
 
-**Código-fonte no GitHub; jogo executado localmente. A hospedagem do jogo não está habilitada.**
+**[Jogar no navegador](https://dimiszz.github.io/river-company/) · [Código-fonte](https://github.com/dimiszz/river-company)**
 
 A TypeScript/Three.js prototype about AI contracts, datacenter upgrades, and a changing river valley.
 
@@ -163,3 +163,8 @@ Petrol and River upgrades now each add **one** unit of power/cooling (previously
 Todos os textos voltados ao jogador estão em português brasileiro: menus, melhorias, contratos, avisos, finais, descrições acessíveis e instruções. Valores usam o formato `pt-BR` (por exemplo, `1.234,5`). O nome exibido é Companhia do Rio e o gráfico identifica o valor da empresa como CR.
 
 O tutorial aparece em um cartão destacado no topo, com título, etapa de 1 a 12 e barra de avanço. A orientação permanece até a ação ser concluída; as explicações de trabalho e valor da empresa têm o botão **Entendi**. A conclusão fica visível por quatro segundos e depois desaparece, sem botão para reabrir. Etapas de energia e refrigeração já atendidas são puladas, e o tutorial não recomeça em expansões posteriores. O cartão se adapta a telas menores e respeita a preferência por menos movimento. Os títulos e etapas ficam em `src/config/tutorial.ts` e as instruções em `src/core/tutorial.ts`.
+
+
+## Publicação no GitHub Pages
+
+O repositório é público. A cada envio para `main`, `.github/workflows/pages.yml` instala as dependências com Node.js 24, executa os testes, compila o jogo e publica somente `dist/` no GitHub Pages. Também é possível iniciar o fluxo manualmente na aba Actions. Os arquivos compilados usam caminhos relativos para funcionar em `/river-company/` e na prévia local. A publicação fica disponível em https://dimiszz.github.io/river-company/ após a conclusão do fluxo.
