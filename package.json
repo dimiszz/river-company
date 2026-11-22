@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "three": "^0.186.1"
+  },
+  "name": "river-company",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview",
+    "test": "node --experimental-strip-types --test src/core/engine.test.ts src/rendering/development.test.ts",
+    "format": "prettier --write src index.html vite.config.ts tsconfig.json"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "@types/three": "^0.186.0",
+    "prettier": "^3.9.9",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.3"
   }
 }

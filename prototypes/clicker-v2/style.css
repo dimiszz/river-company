@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{font-family:'Space Grotesk',sans-serif;color:#f0f2e8;background:#182b29;font-synthesis:none}*{box-sizing:border-box}body{margin:0;overflow:hidden}button{font:inherit;cursor:pointer;color:inherit;border:0}button:focus-visible{outline:2px solid #dbef89;outline-offset:4px}#game{width:100%;height:100svh;position:relative;overflow:hidden;background:#263d39}#world{position:absolute;inset:0;touch-action:none}canvas{display:block;width:100%;height:100%;image-rendering:pixelated}.vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 49%,transparent 40%,#10252485 100%)}header{position:absolute;top:28px;left:32px;right:32px;display:flex;justify-content:space-between;align-items:center;pointer-events:none}.brand{display:flex;gap:13px;align-items:center;font-size:16px;font-weight:700;letter-spacing:2px}.brandmark{height:39px;width:39px;border:1px solid #c9dbb873;display:grid;place-items:center;font-size:26px;color:#dbef89}small{display:block}.brand small{font-size:12px;letter-spacing:3px;color:#acbeb4;margin-top:5px;font-weight:400}.controls{display:flex;gap:6px;pointer-events:auto;margin-right:260px}.controls button{background:#152824ab;border:1px solid #b5c5a52b;border-radius:5px;width:38px;height:38px;font-size:18px}.controls button:hover{background:#395046}.market{position:absolute;right:32px;top:25px;width:230px;padding:15px 16px 12px;background:#122420e3;border:1px solid #a0b9a334;border-radius:8px;backdrop-filter:blur(10px)}.market-label{display:flex;justify-content:space-between;font-size:12px;letter-spacing:2px;color:#a7bdb0}.market-label span:last-child{color:#d8f293;font-size:18px}#chart{width:100%;height:65px;overflow:visible;margin-top:8px}.season{display:flex;gap:8px;align-items:center;font-size:14px;color:#9bad9e}.season>div{height:3px;flex:1;background:#405147}.season i{height:100%;display:block;width:0;background:#cbd998}.contracts{position:absolute;left:32px;top:124px;width:166px}.section-label{font-size:12px;color:#adbbab;letter-spacing:2px;margin-bottom:12px;display:flex;justify-content:space-between}.section-label span{letter-spacing:0}#offers{display:flex;flex-direction:column;gap:9px}.offer{padding:13px 14px;background:#152824d9;border:1px solid #afc8a72e;border-radius:7px;text-align:left;transition:transform .18s,border-color .18s;width:100%}.offer:hover:not(:disabled){transform:translateX(4px);border-color:#d8f293}.offer:disabled{cursor:default;opacity:.4}.offer.active{opacity:1;border-color:#d8f293;background:#25382fe8}.offer-icons{display:flex;align-items:center;justify-content:space-between;font-size:24px;color:#e3e9d6}.offer svg{width:36px;height:30px}.offer-details{display:flex;justify-content:space-between;align-items:center;margin-top:9px;color:#d8f293;font-size:17px}.clock{width:23px;height:23px;transform:rotate(-90deg)}.contract-progress{height:3px;background:#ffffff19;margin-top:12px}.contract-progress i{display:block;background:#d8f293;height:100%;width:0}#hint{position:absolute;bottom:180px;left:50%;transform:translateX(-50%);background:#172b25e3;border:1px solid #afc8a744;border-radius:6px;padding:12px 18px;color:#e3edce;font-size:14px;text-align:center;pointer-events:none;transition:opacity .4s;max-width:85vw}#hint span{color:#d8f293;margin-left:8px}footer{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);width:min(680px,calc(100% - 32px))}.toolbar{background:#152824f0;border:1px solid #b4c5a640;padding:10px;display:flex;align-items:stretch;justify-content:space-around;gap:5px;border-radius:10px;box-shadow:0 15px 45px #08171355}.toolbar button{background:transparent;width:85px;padding:8px 3px 6px;border-radius:5px;position:relative}.toolbar button:hover:not(:disabled){background:#ffffff0c}.toolbar button.selected{background:#d8f293;color:#233329}.toolbar button:disabled{opacity:.3;cursor:default}.toolbar button>span{font-size:30px;line-height:35px;display:block}.toolbar small{font-size:12px;margin-top:3px;letter-spacing:1px}.toolbar i{font-size:10px;display:block;font-style:normal;color:#a8bd91;letter-spacing:2px;margin-top:7px}.toolbar .selected i{color:#526743}.divider{width:1px;background:#a4b7a12e;margin:8px 3px}.footer-caption{display:flex;justify-content:space-between;margin-top:12px;font-size:12px;letter-spacing:2px;color:#9bb1a0}#ending{position:absolute;inset:0;background:#0b171973;backdrop-filter:blur(5px);display:grid;place-items:center}#ending[hidden],#fallback[hidden]{display:none}.endcard{text-align:center;width:min(420px,90vw);padding:38px;background:#172822ef;border:1px solid #aebd9255;border-radius:12px}.endcard>span{font-size:48px;color:#d8f293}.endcard h1{font-weight:500;font-size:32px;letter-spacing:-1px;margin:16px 0}.endcard p{color:#b6c1ac;font-size:16px;line-height:1.6}.endcard svg{width:210px;display:block;margin:25px auto}.endcard button{border-radius:5px;background:#d8f293;color:#243129;padding:12px 22px}#fallback{position:absolute;inset:0;display:grid;place-items:center;padding:30px;background:#182b29}.flash{animation:flash .5s}@keyframes flash{50%{background:#815040}}@media(max-width:700px){header{top:18px;left:18px;right:18px}.brand{font-size:13px;letter-spacing:1px;gap:8px}.brandmark{width:30px;height:30px}.brand small{font-size:10px}.controls{margin:0;gap:4px}.controls button{width:30px;height:32px;font-size:15px}.market{top:75px;right:16px;width:150px;padding:10px}.market-label{font-size:10px;letter-spacing:1px}.contracts{left:16px;top:80px;width:115px}.section-label{font-size:10px;letter-spacing:1px}.offer{padding:9px}.offer-icons{font-size:20px}.offer-details{font-size:14px}.offer svg{width:28px}.toolbar{padding:5px;gap:0}.toolbar button{width:16%;padding:5px 0}.toolbar small{font-size:9px;letter-spacing:0}.toolbar button>span{font-size:25px}.toolbar i{font-size:9px}.divider{margin:6px 2px}.footer-caption{font-size:9px;letter-spacing:1px}footer{bottom:15px}.brand small{letter-spacing:2px}#hint{bottom:150px;font-size:13px;width:max-content}.contract-progress{margin-top:7px}}@media(max-height:560px){.contracts{top:90px}.offer{padding:7px 12px}.offer-details{margin-top:4px}.contract-progress{margin-top:5px}.toolbar button>span{font-size:22px;line-height:25px}footer{bottom:12px}#hint{bottom:125px}}
+.wallet{display:flex;align-items:center;gap:8px;padding-bottom:12px;margin-bottom:12px;border-bottom:1px solid #b4c5a62b}.wallet>span{color:#e8d18b;font-size:23px}.wallet strong{font-size:22px;font-weight:500;font-variant-numeric:tabular-nums}.wallet small{margin-left:auto;font-size:12px;letter-spacing:2px;color:#a7bdb0}.operations{display:flex;gap:10px;margin:8px 0 14px}.resource{flex:1;display:flex;align-items:center;gap:4px;color:#c9daa7;font-size:16px}.resource>div{height:4px;flex:1;background:#405147}.resource i{display:block;height:100%;background:#d8f293;transition:width .25s}.resource.shortage{color:#eca96f}.resource.shortage i{background:#eca96f}@media(max-width:700px){.wallet{padding-bottom:8px;margin-bottom:8px;gap:5px}.wallet strong{font-size:19px}.wallet small{font-size:10px;letter-spacing:1px}.operations{gap:5px;margin:5px 0 10px}.resource{font-size:13px;gap:3px}}
+/* Contract work is separate from the circular delivery deadline. */
+.contracts{width:190px}
+.progress-caption{display:none;align-items:center;gap:8px;margin-top:16px;color:#d8f293;font-size:14px}
+.progress-value{font-size:20px;font-weight:500;font-variant-numeric:tabular-nums}
+.processing-state{margin-left:auto;color:#e8d18b}
+.offer:not(.active) .contract-progress{display:none}
+.offer.active .progress-caption{display:flex}
+.offer.active .contract-progress{height:13px;margin-top:8px;border:1px solid #aebd9255;border-radius:3px;overflow:hidden;background:#091d18}
+.offer.active .contract-progress i{transition:width .12s linear}
+.offer.active{box-shadow:0 0 22px #d8f29312}
+.offer.processing .processing-state{animation:earning 1.1s ease-in-out infinite}
+.offer.blocked .processing-state{color:#eca96f}
+.offer.blocked .contract-progress i{background:#eca96f}
+@keyframes earning{50%{opacity:.5;transform:translateY(-2px)}}
+@media(max-width:700px){.contracts{width:138px}.progress-caption{font-size:12px;gap:5px;margin-top:12px}.progress-value{font-size:18px}.offer.active .contract-progress{height:12px}}
+@media(prefers-reduced-motion:reduce){.offer.processing .processing-state{animation:none}.offer.active .contract-progress i{transition:none}}
+.contract-throughput{display:none;align-items:center;justify-content:space-between;margin-top:8px;font-size:14px;color:#b6c7a3}
+.offer.active .contract-throughput{display:flex}
+.processing-rate{font-variant-numeric:tabular-nums}
+.capacity-note{color:#eca96f}
+.offer.blocked .processing-rate{color:#eca96f}
+#interior-hud{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:22px;background:#152824f0;border:1px solid #b4c5a640;border-radius:8px;padding:10px;max-width:calc(100% - 32px);box-shadow:0 15px 45px #08171355}
+#interior-hud[hidden]{display:none}
+#interior-hud button{background:#2b433d;border-radius:5px;padding:10px 12px;white-space:nowrap;font-size:16px}
+#interior-hud button:hover{background:#3b5549}
+#leave-interior{display:flex;align-items:center;gap:8px;color:#d8f293}
+#leave-interior span{font-size:12px;letter-spacing:2px}
+.interior-name{display:flex;align-items:center;gap:10px;white-space:nowrap;color:#bdcec1;font-size:14px;letter-spacing:1px}
+#interior-status{color:#d8f293;letter-spacing:0}
+#interior-status.offline{color:#eca96f}
+.interior-zoom{display:flex;gap:5px}
+.inside-datacenter footer,.inside-datacenter #hint{display:none}
+@media(max-width:700px){#interior-hud{bottom:20px;gap:10px;padding:8px}.interior-name{font-size:12px;gap:6px;letter-spacing:0}#interior-hud button{padding:9px 10px}#leave-interior span{font-size:11px;letter-spacing:1px}}
+.inside-datacenter .offer:not(.active){display:none}
+.inside-datacenter .contracts:not(:has(.offer.active)){display:none}
+/* The clicker surface keeps buying and production in the first viewport. */
+#upgrade-shop {
+  position:absolute;left:28px;top:112px;width:280px;
+  max-height:calc(100svh - 150px);overflow-y:auto;
+  background:#142822ed;border:1px solid #b4c5a63b;border-radius:10px;
+  padding:14px;scrollbar-width:thin;scrollbar-color:#617b54 transparent;
+}
+.shop-heading{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:2px;color:#b8c8ae;padding:2px 2px 12px}
+#shop-count{background:#d8f2931c;color:#d8f293;min-width:24px;text-align:center;padding:4px;border-radius:4px}
+#upgrade-list{display:flex;flex-direction:column;gap:8px}
+.upgrade-card{position:relative;display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:12px 9px 15px;border:1px solid #b4c5a636;border-radius:6px;background:#2a4237;overflow:hidden;transition:background .15s,transform .15s}
+.upgrade-card:hover:not(:disabled){background:#3b5640;transform:translateY(-1px)}
+.upgrade-card:disabled{background:#1d3029;cursor:default}
+.upgrade-card:disabled .upgrade-icon,.upgrade-card:disabled .upgrade-description{opacity:.58}
+.upgrade-icon{font-size:25px;width:26px;text-align:center;color:#d8f293;flex-shrink:0}
+.upgrade-description{min-width:0;flex:1}
+.upgrade-description strong{font-size:14px;font-weight:500;display:block}
+.upgrade-description small{font-size:12px;color:#a8bba3;margin-top:4px;line-height:1.4}
+.upgrade-purchase{text-align:right;flex-shrink:0;color:#e8d18b}
+.upgrade-purchase strong{font-size:14px;font-weight:500;font-variant-numeric:tabular-nums}
+.upgrade-level{font-size:10px;letter-spacing:1px;color:#a9bca0;margin-top:5px}
+.upgrade-afford{position:absolute;bottom:0;left:0;right:0;height:3px;background:#081d17}
+.upgrade-afford i{height:100%;background:#d8f293;display:block;transition:width .15s}
+.clicker-footer{width:360px;left:calc(50% + 75px);bottom:25px}
+.production-summary{display:flex;justify-content:space-between;font-size:14px;color:#c4d4b4;margin-bottom:10px;padding:0 8px}
+.production-summary strong{font-size:18px;font-weight:500;font-variant-numeric:tabular-nums}
+#process-ai{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;background:#d8f293;color:#233329;border:1px solid #edffbe;border-radius:9px;padding:16px 20px;text-align:left;box-shadow:0 10px 40px #08221366;min-height:86px;transition:background .15s}
+#process-ai:hover:not(:disabled){background:#e4f9a9}
+#process-ai:disabled{background:#3c5142;color:#93a58b;border-color:#61735e;cursor:default}
+#process-ai>span:nth-child(2){font-size:17px;font-weight:600;letter-spacing:1px;flex:1}
+#process-ai small{font-size:13px;letter-spacing:0;font-weight:400;margin-top:7px;color:#526746}
+.process-icon{font-size:35px}.process-pulse{font-size:26px}
+#process-ai.clicked{animation:process-click .18s ease-out}
+@keyframes process-click{50%{transform:scale(.97);box-shadow:0 0 25px #d8f29366}}
+#inspect-center{background:transparent;font-size:12px;letter-spacing:1px;padding:0;color:#d8f293}
+#inspect-center:disabled{opacity:.35;cursor:default}
+.inside-datacenter #upgrade-shop{display:none}
+.inside-datacenter .clicker-footer{display:block;bottom:105px;left:50%;width:330px}
+.inside-datacenter .clicker-footer .footer-caption{display:none}
+#interior-hud{bottom:20px}
+@media(max-width:900px) and (min-width:701px){#upgrade-shop{width:240px;left:18px}.upgrade-card{padding-left:7px;padding-right:7px;gap:7px}.clicker-footer{left:calc(50% + 70px);width:320px}.controls{margin-right:245px}}
+@media(max-width:700px){
+  #upgrade-shop{left:14px;right:14px;top:auto;bottom:160px;width:auto;max-height:230px;padding:10px;background:#142822f5}
+  .shop-heading{padding-bottom:8px;font-size:11px}
+  #upgrade-list{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .upgrade-card{padding:9px 7px 12px;gap:6px;flex-wrap:wrap;align-content:flex-start}
+  .upgrade-icon{font-size:21px;width:20px}
+  .upgrade-description{flex:1;min-width:80px}
+  .upgrade-description strong{font-size:12px}
+  .upgrade-description small{font-size:11px;line-height:1.3}
+  .upgrade-purchase{margin-left:auto;display:flex;gap:8px;align-items:center;width:100%;justify-content:flex-end}
+  .upgrade-purchase strong{font-size:12px}.upgrade-level{margin-top:0;font-size:10px}
+  .clicker-footer{left:50%;width:calc(100% - 28px);bottom:18px}
+  #process-ai{min-height:70px;padding:12px 18px}
+  #process-ai>span:nth-child(2){font-size:15px}
+  .production-summary{margin-bottom:7px}
+  .inside-datacenter .clicker-footer{width:calc(100% - 28px);bottom:100px}
+  #hint{bottom:auto;top:40%;}
+}
+@media(max-height:600px) and (min-width:701px){#upgrade-shop{top:88px;max-height:calc(100svh - 105px)}.clicker-footer{bottom:15px}#process-ai{min-height:70px;padding:12px}.inside-datacenter .clicker-footer{bottom:95px}}
+@media(prefers-reduced-motion:reduce){#process-ai.clicked{animation:none}.upgrade-card,.upgrade-afford i{transition:none}}
+/* Contracts remain timed; clicks and automation both advance their work. */
+.contracts{left:calc(50% + 35px);top:118px;transform:translateX(-50%);width:min(420px,calc(100vw - 580px))}
+#offers{flex-direction:row;gap:8px;align-items:flex-start}
+.offer{min-width:0;flex:1;padding:10px}
+.offer-icons{font-size:20px}.offer svg{width:28px;height:25px}
+.offer .progress-caption{gap:5px;font-size:12px;margin-top:12px}
+.offer .progress-value{font-size:18px}.offer .processing-state{font-size:12px}
+.offer .contract-throughput{font-size:12px}
+.inside-datacenter .contracts{left:28px;top:118px;transform:none;width:170px}
+.inside-datacenter #offers{display:block}
+@media(max-width:1000px) and (min-width:701px){.contracts{left:calc(50% + 60px);top:110px;width:220px}#offers{flex-direction:column}.offer{padding:8px 10px}.offer:not(.active) .offer-details{display:none}.offer.active .offer-icons{display:none}.offer .progress-caption{margin-top:8px}.inside-datacenter .contracts{width:170px}}
+@media(max-width:700px){.contracts{left:14px;top:80px;transform:none;width:138px}.section-label{font-size:10px}#offers{flex-direction:column;gap:5px}.offer{padding:7px 9px}.offer:not(.active) .offer-details{display:none}.offer.active .offer-icons{display:none}.offer.active .offer-details{margin-top:0}.offer .progress-caption{margin-top:6px}.offer .contract-throughput{margin-top:5px}.inside-datacenter .contracts{left:14px;top:80px;width:138px}#upgrade-shop{max-height:210px}}
+.upgrade-preview{display:block;color:#d8f293;font-size:12px;font-variant-numeric:tabular-nums;margin-top:5px;line-height:1.4}
+.upgrade-preview.limited{color:#eca96f}
+.upgrade-card.purchased{animation:upgrade-purchased .45s ease-out}
+@keyframes upgrade-purchased{40%{background:#586b3a;border-color:#d8f293}}
+#feedback-layer{position:absolute;inset:0;pointer-events:none;z-index:4;overflow:hidden}
+.floating-reward{position:absolute;white-space:nowrap;background:#172b25ed;border:1px solid #d8f29377;border-radius:5px;padding:7px 11px;font-size:14px;color:#e4f4bc;transform:translateX(-50%);animation:reward-rise .95s ease-out forwards;text-shadow:0 1px 2px #0c2015}
+@keyframes reward-rise{0%{opacity:0;transform:translate(-50%,0)}15%{opacity:1}100%{opacity:0;transform:translate(-50%,-65px)}}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(prefers-reduced-motion:reduce){.upgrade-card.purchased{animation:none}.floating-reward{animation:none;opacity:1}}
+.offer.active.deadline-risk .clock-ring{stroke:#eca96f}

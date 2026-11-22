@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#182b29" />
+    <title>Companhia do Rio</title>
+    <meta
+      name="description"
+      content="Cumpra contratos de IA. Automatize, amplie e acompanhe o destino do rio."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23182b29'/%3E%3Cpath d='M5 24L12 18L17 20L27 7' stroke='%23dbef89' stroke-width='3' fill='none'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <main id="game">
+      <div
+        id="world"
+        aria-label="Vale interativo. Clique em um terreno perto do rio para construir seu centro de dados."
+        role="application"
+      ></div>
+      <div class="vignette"></div>
+      <header>
+        <div class="brand">
+          <span class="brandmark">↗</span>
+          <div>COMPANHIA DO RIO<small>RIO / 01</small></div>
+        </div>
+        <div class="controls">
+          <button id="sound" aria-label="Ativar som" title="Som">♪</button
+          ><button id="pause" aria-label="Pausar" title="Pausar">Ⅱ</button
+          ><button
+            id="speed"
+            aria-label="Velocidade da simulação"
+            title="Velocidade da simulação"
+          >
+            1×</button
+          ><button
+            id="fast-mode"
+            aria-label="Modo rápido desativado"
+            aria-pressed="false"
+            title="Modo rápido: 3× trabalho e ganhos, mudanças ambientais mais rápidas e um objetivo final menor. Os prazos dos contratos não mudam."
+          >
+            Rápido</button
+          ><button id="restart" aria-label="Reiniciar" title="Reiniciar">
+            ↻
+          </button>
+        </div>
+      </header>
+      <aside class="market">
+        <div class="wallet" aria-label="Dinheiro disponível">
+          <span aria-hidden="true">◉</span><strong id="cash">0</strong
+          ><small>CAIXA</small>
+        </div>
+        <div class="income-display" aria-label="Renda automática por segundo">
+          <span>↗ <strong id="income-rate">0</strong> ◉ / s</span>
+        </div>
+        <div class="market-label">
+          <span>CR / VALOR</span><span id="trend">↗</span>
+        </div>
+        <div class="stock-quote">
+          <strong id="stock-price">20,0</strong
+          ><span id="stock-change">+0%</span>
+        </div>
+        <svg
+          id="chart"
+          viewBox="0 0 220 65"
+          role="img"
+          aria-label="Gráfico do valor das ações da empresa"
+        >
+          <defs>
+            <linearGradient id="fade" x1="0" x2="0" y1="0" y2="1">
+              <stop stop-color="#d8f293" stop-opacity=".23" />
+              <stop offset="1" stop-color="#d8f293" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M0 12 H220 M0 32 H220 M0 52 H220"
+            fill="none"
+            stroke="#9cb299"
+            stroke-opacity="0.15"
+            stroke-dasharray="3 5"
+          />
+          <path id="chartfill" fill="url(#fade)" />
+          <path id="chartline" fill="none" stroke="#d8f293" stroke-width="2" />
+          <circle id="chartdot" r="3" fill="#d8f293" />
+        </svg>
+        <div class="operations" aria-label="Infraestrutura">
+          <div id="energy" class="resource" role="img" title="Energia elétrica">
+            <span>ϟ</span>
+            <div><i></i></div>
+          </div>
+          <div
+            id="compute"
+            class="resource"
+            role="img"
+            title="Capacidade de IA ativa"
+          >
+            <span>▥</span>
+            <div><i></i></div>
+          </div>
+          <div id="water" class="resource" role="img" title="Refrigeração">
+            <span>≋</span>
+            <div><i></i></div>
+          </div>
+        </div>
+      </aside>
+      <aside id="upgrade-shop" aria-label="Melhorias do centro de dados">
+        <div class="shop-heading">
+          <button
+            id="toggle-upgrades"
+            aria-expanded="true"
+            aria-controls="upgrade-list"
+          >
+            MELHORIAS <span id="shop-toggle-icon">−</span></button
+          ><span id="shop-count">0</span>
+        </div>
+        <div
+          id="shop-locked"
+          aria-label="As melhorias são liberadas durante o tutorial"
+        >
+          🔒
+        </div>
+        <div id="upgrade-list"></div>
+      </aside>
+      <section id="contract-panel" class="contracts" aria-label="Contratos">
+        <div class="section-label">
+          CONTRATOS
+          <span id="contract-state">◇ ◇ ◇</span>
+        </div>
+        <div id="offers"></div>
+      </section>
+      <section id="announcements" aria-label="Orientações e avisos do jogo">
+        <section id="tutorial-card" aria-labelledby="tutorial-title">
+          <div class="tutorial-heading">
+            <span>GUIA INICIAL</span><span id="tutorial-step">1 / 12</span>
+          </div>
+          <h2 id="tutorial-title">Escolha o terreno</h2>
+          <div id="hint" role="status" aria-live="polite">
+            Clique em um terreno perto do rio para construir seu centro de
+            dados.
+          </div>
+          <button id="tutorial-next" type="button" hidden>Entendi →</button>
+          <div id="tutorial-progress" aria-hidden="true"><i></i></div>
+        </section>
+        <div id="boost-feedback" aria-hidden="true"></div>
+      </section>
+      <div id="click-rewards" aria-hidden="true"></div>
+      <section
+        id="interior-hud"
+        hidden
+        aria-label="Controles do interior do centro de dados"
+      >
+        <button id="leave-interior" aria-label="Voltar ao vale">
+          ↙ <span>VALE</span>
+        </button>
+        <div class="interior-name">
+          <span>▥</span><span id="interior-title">DADOS / 01</span
+          ><span
+            id="interior-status"
+            role="img"
+            aria-label="Centro de dados inativo"
+            >⚡</span
+          >
+        </div>
+        <div class="interior-zoom">
+          <button
+            id="interior-zoom-out"
+            aria-label="Afastar a câmera dentro do centro de dados"
+          >
+            −</button
+          ><button
+            id="interior-zoom-in"
+            aria-label="Aproximar a câmera dentro do centro de dados"
+          >
+            +
+          </button>
+        </div>
+      </section>
+      <div
+        id="clicker-status"
+        class="visually-hidden"
+        role="status"
+        aria-live="polite"
+      ></div>
+      <div
+        id="ending"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="end-title"
+        hidden
+      >
+        <div class="endcard">
+          <span id="end-symbol"></span>
+          <h1 id="end-title"></h1>
+          <p id="end-copy"></p>
+          <svg id="end-chart" viewBox="0 0 220 65"></svg
+          ><button id="again">↻ &nbsp; Jogar novamente</button>
+        </div>
+      </div>
+      <div id="fallback" hidden>
+        Não foi possível iniciar a visualização 3D. Use um navegador com WebGL
+        ativado.
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+export const MARKET = {
+  startingPrice: 20,
+  installedCapacityValue: 4,
+  onlineCapacityValue: 12,
+  chipValue: 5,
+  automationValue: 7,
+  efficiencyValue: 9,
+  capitalPerPoint: 200,
+  earningsPerPoint: 200,
+  deliveryValue: 4,
+  reputationWeight: 6,
+  offlineCapacityPenalty: 4,
+  responseSeconds: 0.8,
+  sampleSeconds: 1,
+  historyLength: 60,
+};

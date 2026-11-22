@@ -2,3 +2,12 @@ node_modules/
 .sites-runtime/
 .playwright-cli/
 output/
+
+/dist/
+*.tsbuildinfo
+
+.openai/
+.env
+.env.*
+!.env.example
+.DS_Store
